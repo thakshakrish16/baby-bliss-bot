@@ -109,6 +109,7 @@ Valid values: "potential" | "completed" (one)
 OTHER
 -----
 - structural-marker: "combine marker" | "what" (one)
+- possible-role: "modifier" | "specifier" (one or more)
 
 -------------------------------------------------------------------------------
 Additional Metadata
@@ -445,14 +446,16 @@ MODIFIER_SEMANTICS = {
                 "person": "first-person",
                 "number": "singular",
                 "position": "suffix",
-                "middle-position": "suffix-first-part"
+                "middle-position": "suffix-first-part",
+                "position-role: "specifier"
             },
             "equivalent_indicator": "24669",
             "priority": ["8497", "24669"],
         }, {
             "numeric": "one",
             "features": {
-                "position": "prefix"
+                "position": "prefix",
+                "position-role: "modifier"
             },
             "notes": "when in default position (prefix), functions as a cardinal to indicate number of items. otherwise (suffixed), functions as an ordinal"
         }]
@@ -465,13 +468,15 @@ MODIFIER_SEMANTICS = {
                 "number": "singular",
                 "position": "suffix",
                 "middle-position": "suffix-first-part",
+                "position-role: "specifier"
             },
             "equivalent_indicator": "24678",
             "priority": ["8498", "24678"],
         }, {
             "features": {
                 "numeric": "two",
-                "position": "prefix"
+                "position": "prefix",
+                 "position-role: "modifier"
             },
             "notes": "when in default position (prefix), functions as a cardinal to indicate number of items. otherwise (suffixed), functions as an ordinal"
         }]
@@ -484,13 +489,15 @@ MODIFIER_SEMANTICS = {
                 "number": "singular",
                 "position": "suffix",
                 "middle-position": "suffix-first-part",
+                "position-role: "specifier"
             },
             "equivalent_indicator": "24679",
             "priority": ["8499", "24679"],
           }, {
             "features": {
                 "numeric": "three",
-                "position": "prefix"
+                "position": "prefix",
+                "position-role: "modifier"
             },
             "notes": "when in default position (prefix), functions as a cardinal to indicate number of items. otherwise (suffixed), functions as an ordinal"
          }]
@@ -511,6 +518,7 @@ MODIFIER_SEMANTICS = {
         "time": "ago, then (past)",
         "features": {
            "position": "suffix",
+           "position-role: "specifier"
         }
     },
 
@@ -519,6 +527,7 @@ MODIFIER_SEMANTICS = {
         "time": "then_future, so, later",
         "features": {
            "position": "suffix",
+           "position-role: "specifier"
         }
     },
 
@@ -526,7 +535,8 @@ MODIFIER_SEMANTICS = {
     "15736": {
         "time": "now",
         "features": {
-           "position": "suffix"
+           "position": "suffix",
+           "position-role: "specifier"
         }
     },
 
@@ -554,7 +564,8 @@ MODIFIER_SEMANTICS = {
         "degree": "intensity",
         "features": {
            "position": "suffix",
-           "middle-position": "suffix-first-part"
+           "middle-position": "suffix-first-part",
+           "position-role: "specifier"
         },
         "notes": "exclamatory when used as a prefix, otherwise a specifier"
     },
@@ -562,8 +573,9 @@ MODIFIER_SEMANTICS = {
     "24879": {
         "degree": "more (comparative)",
         "features": {
-           "position": "suffix",
-           "middle-position": "prefix-second-part"
+           "position": "prefix",
+           "middle-position": "prefix-second-part",
+           "position-role: "specifier"
         },
         "notes": "position is prefix if positive context"
     },
@@ -571,8 +583,9 @@ MODIFIER_SEMANTICS = {
     "24944": {
         "degree": "most (comparative)",
         "features": {
-           "position": "suffix",
-           "middle-position": "prefix-second-part"
+           "position": "prefix",
+           "middle-position": "prefix-second-part",
+           "position-role: "specifier"
         },
         "notes": "position is prefix if positive context"
     },
@@ -592,7 +605,8 @@ MODIFIER_SEMANTICS = {
         "negation": "opposite",
         "features": {
            "position": "prefix",
-           "middle-position": "prefix-second-part"
+           "middle-position": "prefix-second-part",
+           "position-role: "modifier"
         },
         "priority": ["15474", "15733", "15927"]
     },
@@ -636,7 +650,8 @@ MODIFIER_SEMANTICS = {
         "features": {
            "link": "association",
            "position": "prefix",
-           "middle-position": "prefix-second-part"
+           "middle-position": "prefix-second-part",
+           "position-role: "modifier"
         }
     },
     # Relational operators
@@ -645,7 +660,8 @@ MODIFIER_SEMANTICS = {
         "negation": "minus, no, without",
         "features": {
            "position": "prefix",
-           "middle-position": "prefix-second-part"
+           "middle-position": "prefix-second-part",
+           "position-role: "modifier"
         },
         "priority": ["15474", "15733", "15927"]
     },
@@ -671,7 +687,8 @@ MODIFIER_SEMANTICS = {
         "features": {
            "link": "derivative",
            "position": "prefix",
-           "middle-position": "prefix-second-part"
+           "middle-position": "prefix-second-part",
+           "position-role: "modifier"
         },
         "notes": "position is prefix when describing part of/component of X (e.g. tonsils are a part of the throat, gene is part of DNA). Position is suffix when describing X into parts, divided into/produces components (e.g. suit, jigsaw puzzle)"
     },
@@ -930,9 +947,11 @@ MODIFIER_SEMANTICS = {
         "features": {
            "position": "suffix",
            "middle-position": "prefix-second-part"
+           "position-role: "modifier, specifier"
         },
         "equivalent_indicator": "24676",
-        "priority":  ["12663", "24676"]
+        "priority":  ["12663", "24676"],
+        "notes": "Position role is primarily suffix as modifier, but can also be prefix as specifier."
     },
     # Quantifiers
     # "B368"
@@ -941,7 +960,8 @@ MODIFIER_SEMANTICS = {
         "quantifier": "many, much",
         "features": {
            "position": "prefix",
-           "middle-position": "prefix-second-part"
+           "middle-position": "prefix-second-part",
+           "position-role: "modifier"
         }
     },
     # pending: few (not yet in bliss-glyph-data.js)
@@ -1038,6 +1058,7 @@ MODIFIER_SEMANTICS = {
         "numeric": "zero",
         "features": {
            "position": "prefix"
+           "position-role: "modifier"
         },
         "notes": "when in default position (prefix), functions as a cardinal to indicate number of items. otherwise (suffixed), functions as an ordinal"
     },
@@ -1045,7 +1066,8 @@ MODIFIER_SEMANTICS = {
     "8500": {
         "numeric": "four",
         "features": {
-           "position": "prefix"
+           "position": "prefix",
+           "position-role: "modifier"
         },
         "notes": "when in default position (prefix), functions as a cardinal to indicate number of items. otherwise (suffixed), functions as an ordinal"
     },
@@ -1053,7 +1075,8 @@ MODIFIER_SEMANTICS = {
     "8501": {
         "numeric": "five",
         "features": {
-           "position": "prefix"
+           "position": "prefix",
+           "position-role: "modifier"
         },
         "notes": "when in default position (prefix), functions as a cardinal to indicate number of items. otherwise (suffixed), functions as an ordinal"
     },
@@ -1061,7 +1084,8 @@ MODIFIER_SEMANTICS = {
     "8502": {
         "numeric": "six",
         "features": {
-           "position": "prefix"
+           "position": "prefix",
+           "position-role: "modifier"
         },
         "notes": "when in default position (prefix), functions as a cardinal to indicate number of items. otherwise (suffixed), functions as an ordinal"
     },
@@ -1069,7 +1093,8 @@ MODIFIER_SEMANTICS = {
     "8503": {
         "numeric": "seven",
         "features": {
-           "position": "prefix"
+           "position": "prefix",
+           "position-role: "modifier"
         },
         "notes": "when in default position (prefix), functions as a cardinal to indicate number of items. otherwise (suffixed), functions as an ordinal"
     },
@@ -1077,7 +1102,8 @@ MODIFIER_SEMANTICS = {
     "8504": {
         "numeric": "eight",
         "features": {
-           "position": "prefix"
+           "position": "prefix",
+           "position-role: "modifier"
         },
         "notes": "when in default position (prefix), functions as a cardinal to indicate number of items. otherwise (suffixed), functions as an ordinal"
     },
@@ -1085,7 +1111,8 @@ MODIFIER_SEMANTICS = {
     "8505": {
         "numeric": "nine",
         "features": {
-           "position": "prefix"
+           "position": "prefix",
+           "position-role: "modifier"
         },
         "notes": "when in default position (prefix), functions as a cardinal to indicate number of items. otherwise (suffixed), functions as an ordinal"
     }
