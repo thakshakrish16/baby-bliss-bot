@@ -125,10 +125,6 @@ from highest to lowest priority.
 Valid values: "prefix" | "suffix" (one)
 Example: "peace: opposite + war" (prefix), "danger: creation + intensity" (suffix)
 
-- middle-position: position of a character when it is between other characters. Either the character associates its meaning with the character that comes before it (first part) or after it (second part).
-Valid values: "prefix-second-part" | "suffix-first-part" (one)
-Example: "remembrance day: day + opposite + forgetting" (prefix-second-part), "justification: support (oral) + correctness" (suffix-first-par)
-
 Note: Action and description indicators are commonly used across users, while
 present‑action and adverb indicators are more typical in full‑form usage.
 """
@@ -433,8 +429,7 @@ MODIFIER_SEMANTICS = {
         "features": {
            "gender": "feminine",
            "number": "singular",
-           "position": "suffix",
-           "middle-position": "suffix-first-part"
+           "position": "suffix"
         },
         "equivalent_indicator": "24668",
         "priority": ["14166", "24668"]
@@ -446,7 +441,6 @@ MODIFIER_SEMANTICS = {
                 "person": "first-person",
                 "number": "singular",
                 "position": "suffix",
-                "middle-position": "suffix-first-part",
                 "position-role: "specifier"
             },
             "equivalent_indicator": "24669",
@@ -466,8 +460,7 @@ MODIFIER_SEMANTICS = {
             "features": {
                 "person": "second-person",
                 "number": "singular",
-                "position": "suffix",
-                "middle-position": "suffix-first-part",
+                "position": "suffix"
                 "position-role: "specifier"
             },
             "equivalent_indicator": "24678",
@@ -487,8 +480,7 @@ MODIFIER_SEMANTICS = {
             "features": {
                 "person": "third-person",
                 "number": "singular",
-                "position": "suffix",
-                "middle-position": "suffix-first-part",
+                "position": "suffix"
                 "position-role: "specifier"
             },
             "equivalent_indicator": "24679",
@@ -506,8 +498,7 @@ MODIFIER_SEMANTICS = {
     "28052": {
         "features": {
             "size": "diminutive",
-            "position": "suffix",
-            "middle-position": "suffix-first-part",
+            "position": "suffix"
         },
         "equivalent_indicator": "25458",
         "priority": ["28052", "25458"],
@@ -545,7 +536,7 @@ MODIFIER_SEMANTICS = {
     "13382": {
         "structural-marker": "combine marker",
         "notes": "special case (combine marker acts like quotation marks surrounding a set of symbols)",
-        "position": "prefix"
+        "position": ["prefix", "suffix"]
     },
 
     # What
@@ -553,8 +544,8 @@ MODIFIER_SEMANTICS = {
     "18229": {
         "structural-marker": "what",
         "features": {
-           "position": "prefix",
-           "position-role": "modifier, specifier"
+           "position": "prefix"
+           "position-role": "modifier"
         },
         "notes": "interrogative when used as a prefix, otherwise a specifier"
     },
@@ -565,7 +556,7 @@ MODIFIER_SEMANTICS = {
         "degree": "intensity",
         "features": {
            "position": "prefix",
-           "position-role: "modifier, specifier"
+           "position-role: "modifier"
         },
         "notes": "exclamatory when used as a prefix, otherwise a specifier"
     },
@@ -574,7 +565,6 @@ MODIFIER_SEMANTICS = {
         "degree": "more (comparative)",
         "features": {
            "position": "prefix",
-           "middle-position": "prefix-second-part",
            "position-role: "modifier"
         }
     },
@@ -583,7 +573,6 @@ MODIFIER_SEMANTICS = {
         "degree": "most (comparative)",
         "features": {
            "position": "prefix",
-           "middle-position": "prefix-second-part",
            "position-role: "modifier"
         }
     },
@@ -611,8 +600,7 @@ MODIFIER_SEMANTICS = {
     "15733": {
         "negation": "not, negative, no, don't, doesn't",
         "features": {
-           "position": "prefix",
-           "middle-position": "prefix-second-part"
+           "position": "prefix"
         },
         "priority": ["15474", "15733", "15927"]
     },
@@ -621,7 +609,6 @@ MODIFIER_SEMANTICS = {
         "negation": "opposite",
         "features": {
            "position": "prefix",
-           "middle-position": "prefix-second-part",
            "position-role: "modifier"
         },
         "priority": ["15474", "15733", "15927"]
@@ -631,32 +618,28 @@ MODIFIER_SEMANTICS = {
     "16984": {
         "concept-transforming": "similar to",
         "features": {
-           "position": "prefix",
-           "middle-position": "prefix-second-part"
+           "position": "prefix"
         }
     },
     # "B1060/B578/B303"
     "16985": {
         "concept-transforming": "look similar to",
         "features": {
-           "position": "prefix",
-           "middle-position": "prefix-second-part"
+           "position": "prefix"
         }
     },
     # "B1060/B578/B608"
     "16986": {
         "concept-transforming": "sound similar to",
         "features": {
-           "position": "prefix",
-           "middle-position": "prefix-second-part"
+           "position": "prefix"
         }
     },
     # "B578/B608"
     "16714": {
         "concept-transforming": "same sound",
         "features": {
-           "position": "prefix",
-           "middle-position": "prefix-second-part"
+           "position": "prefix"
         }
     },
     # "B578/B303": "look same" but missing in the BCI-AV
@@ -665,8 +648,7 @@ MODIFIER_SEMANTICS = {
         "concept-transforming": "generalization",
         "features": {
            "link": "association",
-           "position": "prefix",
-           "middle-position": "prefix-second-part",
+           "position": "prefix
            "position-role: "modifier"
         }
     },
@@ -675,8 +657,7 @@ MODIFIER_SEMANTICS = {
     "15474": {
         "negation": "minus, no, without",
         "features": {
-           "position": "prefix",
-           "middle-position": "prefix-second-part",
+           "position": "prefix"
            "position-role: "modifier"
         },
         "priority": ["15474", "15733", "15927"]
@@ -700,9 +681,8 @@ MODIFIER_SEMANTICS = {
         "relational": "part of",
         "features": {
            "link": "derivative",
-           "position": "prefix",
-           "middle-position": "prefix-second-part",
-           "position-role: "modifier, specifier"
+           "position": "prefix"
+           "position-role: "modifier"
         },
         "notes": "position is prefix (modifier) when describing part of/component of X (e.g. tonsils are a part of the throat, gene is part of DNA). Position is suffix (specifier) when describing X into parts, divided into/produces components (e.g. suit, jigsaw puzzle)"
     },
@@ -930,7 +910,7 @@ MODIFIER_SEMANTICS = {
         "relational": "belongs to",
         "features": {
            "position": "prefix"
-           "position-role: "modifier, specifier"
+           "position-role: ["modifier, specifier"]
         },
         "equivalent_indicator": "24676",
         "priority":  ["12663", "24676"],
@@ -943,7 +923,6 @@ MODIFIER_SEMANTICS = {
         "quantifier": "many, much",
         "features": {
            "position": "prefix",
-           "middle-position": "prefix-second-part",
            "position-role: "modifier"
         }
     },
